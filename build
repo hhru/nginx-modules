@@ -1,0 +1,15 @@
+#!/bin/zsh
+set -e
+sudo rsync -Huhva files/ /
+dpkg -s libssl-dev > /dev/null || sudo apt-get install -y libssl-dev
+
+MODULES=(nginx_requestid ngx_brotli testcookie-nginx-module)
+git submodule update --init $MODULES
+
+mkdir -p src
+cd src
+apt-get source nginx=1.16.0
+cd nginx-1.16.0/
+
+./configure --without-http_rewrite_module --without-http_gzip_module --add-dynamic-module=../../${^MODULES}
+make modules
