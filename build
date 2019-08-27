@@ -1,6 +1,6 @@
 #!/bin/zsh
 set -e
-sudo rsync -Huhva files/ /
+sudo rsync -Huhvr files/ /
 dpkg -s libssl-dev > /dev/null || sudo apt-get install -y libssl-dev
 
 MODULES=(nginx_requestid ngx_brotli testcookie-nginx-module)
