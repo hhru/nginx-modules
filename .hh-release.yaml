@@ -1,4 +1,5 @@
-build_image: registry.pyn.ru:5000/openjdk11-building:2019.01.15
+docker_context: .
+build_docker_file: docker/Dockerfile.building
 update_method: deb_update
 build_method: debuild
 deploy_method: deb_deploy

@@ -16,8 +16,8 @@ override_dh_auto_clean:
 	git submodule deinit $(MODULES)
 
 download_src:
-	mkdir -p src;  cd src;  apt-get source nginx=$(NGINX_VERSION) || echo "Error nginx apt sources not configured. Run \
-        'sudo rsync -Huhvr files/ / && sudo apt-get update'" from project root
+	mkdir -p src;  cd src;  apt-get source nginx=$(NGINX_VERSION) || (echo "Error nginx apt sources not configured. Run \
+        'sudo rsync -Huhvr files/ / && sudo apt-get update'" from project root; exit 1)
 
 override_dh_auto_configure: download_src 
 	git submodule update --init --recursive $(MODULES)
