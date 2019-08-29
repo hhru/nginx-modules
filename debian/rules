@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+export DH_VERBOSE=1
+export DH_OPTIONS=-v
+DEB_BUILD_OPTIONS=nostrip
+SHELL=/bin/bash 
+NGINX_VERSION:= $(shell cat nginx_version)
+NGINX_SRC = $(shell find src/ -mindepth 1 -maxdepth 1 -type d)
+MODULES := nginx_requestid  ngx_brotli testcookie-nginx-module
+INSTALLDIR := $(CURDIR)/debian/nginx-modules//usr/lib/nginx/modules
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rf src	
+	git submodule deinit $(MODULES)
+
+download_src:
+	mkdir -p src;  cd src;  apt-get source nginx=$(NGINX_VERSION) || echo "Error nginx apt sources not configured. Run \
+        'sudo rsync -Huhvr files/ / && sudo apt-get update'" from project root
+
+override_dh_auto_configure: download_src 
+	git submodule update --init --recursive $(MODULES)
+	cd $(NGINX_SRC); ./configure --with-compat $(addprefix --add-dynamic-module=../../,$(MODULES))
+
+override_dh_auto_build:
+	cd $(NGINX_SRC); make modules
+
+override_dh_auto_install:
+	install -d $(INSTALLDIR)
+	for lib in $(wildcard $(NGINX_SRC)/objs/*.so); do install -D -s $${lib} $(INSTALLDIR); done
+
+override_dh_fixperms:
+	dh_fixperms
+	find debian -name '*.so' -exec chmod 0755 {} +
