@@ -1,0 +1,5 @@
+docker_context: .
+build_docker_file: docker/Dockerfile.building
+update_method: deb_update
+build_method: debuild
+deploy_method: deb_deploy

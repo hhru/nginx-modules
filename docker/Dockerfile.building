@@ -1,0 +1,8 @@
+FROM registry.pyn.ru:5000/openjdk11-building:2019.02.14
+
+COPY files /home/files/
+
+RUN apt-get update  && apt-get install --no-install-recommends --no-install-suggests -y --force-yes \
+    libssl-dev libpcre++-dev rsync zlib1g-dev
+
+RUN rsync -Huhvr /home/files/ / && apt-get update
