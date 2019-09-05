@@ -1,3 +1,9 @@
+nginx-modules (1.0.1) unstable; urgency=medium
+
+  * Bump version up to 1.0.1
+
+ -- Automated Build <a.mishurov@hh.ru>  Thu, 05 Sep 2019 14:49:40 +0300
+
 nginx-modules (1.0.0-1) unstable; urgency=medium
 
   * Initial release
