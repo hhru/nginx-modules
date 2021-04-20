@@ -1,2 +1,2 @@
-deb [arch=amd64] http://nginx-mirror.hh.ru/packages/ubuntu/ xenial nginx
-deb-src http://nginx-mirror.hh.ru/packages/ubuntu/ xenial nginx
+deb [arch=amd64] http://nginx-mirror.hh.ru/packages/ubuntu/ bionic nginx
+deb-src http://nginx-mirror.hh.ru/packages/ubuntu/ bionic nginx
