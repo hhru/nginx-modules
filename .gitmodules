@@ -7,3 +7,6 @@
 [submodule "nginx_requestid"]
 	path = nginx_requestid
 	url = https://github.com/hhru/nginx_requestid.git
+[submodule "ngx_http_substitutions_filter_module"]
+        path = ngx_http_substitutions_filter
+        url = https://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
