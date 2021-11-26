@@ -5,7 +5,7 @@ DEB_BUILD_OPTIONS=nostrip
 SHELL=/bin/bash 
 NGINX_VERSION:= $(shell cat nginx_version)
 NGINX_SRC = $(shell find src/ -mindepth 1 -maxdepth 1 -type d)
-MODULES := nginx_requestid  ngx_brotli testcookie-nginx-module
+MODULES := nginx_requestid  ngx_brotli testcookie-nginx-module ngx_http_substitutions_filter_module
 INSTALLDIR := $(CURDIR)/debian/nginx-modules//usr/lib/nginx/modules
 
 %:
