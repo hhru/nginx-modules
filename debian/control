@@ -9,5 +9,4 @@ Package: nginx-modules
 Architecture: any
 Depends: ${misc:Depends}
 Description: precompiled hh nginx modules
- Precompiled hh nginx modules: ngx_http_testcookie_access_module.so ngx_http_brotli_filter_module.so ngx_http_brotli_static_module.so ngx_http_requestid_module.so ngx_http_substitutions_filter_module.so
-
+ Precompiled hh nginx modules: ngx_http_testcookie_access_module.so ngx_http_brotli_filter_module.so ngx_http_brotli_static_module.so ngx_http_requestid_module.so ngx_http_substitutions_filter_module.so ngx_http_lua_module.so ngx_devel_kit.so ngx_http_set_misc_module.so
