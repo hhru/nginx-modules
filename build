@@ -8,8 +8,8 @@ git submodule update --init $MODULES
 
 mkdir -p src
 cd src
-apt-get source nginx=1.20.2
-cd nginx-1.20.2/
+apt-get source nginx=1.24.0
+cd nginx-1.24.0/
 
 ./configure --without-http_rewrite_module --without-http_gzip_module --add-dynamic-module=../../${^MODULES}
 make modules
