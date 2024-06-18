@@ -10,7 +10,7 @@
 [submodule "ngx_http_lua_module"]
 	path = ngx_http_lua_module
 	url = https://github.com/openresty/lua-nginx-module.git
-    branch = v0.10.26
+        branch = v0.10.26
 [submodule "ngx_http_set_misc_module"]
 	path = ngx_http_set_misc_module
 	url = https://github.com/openresty/set-misc-nginx-module.git
