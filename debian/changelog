@@ -1,3 +1,9 @@
+nginx-modules (1.0.7) unstable; urgency=medium
+
+  * Bump version up to 1.0.7
+
+ -- Automated Build <al.gvozdev@hh.ru>  Wed, 19 Jun 2024 00:55:47 +0300
+
 nginx-modules (1.0.6) unstable; urgency=medium
 
   * Bump version up to 1.0.6
