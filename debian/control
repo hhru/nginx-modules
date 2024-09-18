@@ -1,7 +1,7 @@
 Source: nginx-modules
 Section: httpd
 Priority: optional
-Maintainer: Alexander Mishurov <a.mishurov@hh.ru>
+Maintainer: Anton Pakhomov <an.pakhomov@hh.ru>
 Build-Depends: debhelper (>= 9), libssl-dev, libpcre++-dev
 Standards-Version: 4.1.2
 
